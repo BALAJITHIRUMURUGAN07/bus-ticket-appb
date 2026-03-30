@@ -1,0 +1,12 @@
+{
+  "name": "bus-ticket-appb",
+  "version": "1.0.0",
+  "description": "Bus ticket booking web app with seat booking, schedule viewing, ticket generation, live seat availability, and AI-based fare estimation.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

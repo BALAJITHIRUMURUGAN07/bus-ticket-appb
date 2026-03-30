@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bus Ticket Booking App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Bus Ticket Booking</h1>
+    <p>Book seats, view schedules, generate tickets, and get live AI-based fare estimates.</p>
+  </header>
+  <div id="status-output" class="status-message hidden"></div>
+
+  <main>
+    <section class="panel" id="schedule-panel">
+      <h2>Live Bus Schedule</h2>
+      <div class="route-selector">
+        <label for="route-search">Search routes</label>
+        <input id="route-search" type="search" placeholder="Search by city or route" />
+      </div>
+      <div id="schedule-list" class="card-grid"></div>
+    </section>
+
+    <section class="panel" id="seat-panel">
+      <h2>Live Seat Availability</h2>
+      <div class="route-selector">
+        <label for="route-select">Choose a route:</label>
+        <select id="route-select"></select>
+        <button id="refresh-seats">Refresh</button>
+      </div>
+      <div id="seat-map" class="seat-map"></div>
+      <div class="seat-legend">
+        <span class="legend available">Available</span>
+        <span class="legend booked">Booked</span>
+        <span class="legend selected">Selected</span>
+      </div>
+    </section>
+
+    <section class="panel" id="booking-panel">
+      <h2>Book Seats</h2>
+      <form id="booking-form">
+        <div class="form-field">
+          <label for="booking-route">Route</label>
+          <select id="booking-route"></select>
+        </div>
+        <div class="form-field">
+          <label for="passenger-name">Passenger Name</label>
+          <input id="passenger-name" type="text" placeholder="Enter your name" required />
+        </div>
+        <div class="form-field">
+          <label>Selected Seats</label>
+          <div id="selected-seats" class="selected-list">None</div>
+        </div>
+        <button type="submit" class="primary-button">Confirm Booking</button>
+      </form>
+      <div id="ticket-card" class="ticket-card hidden"></div>
+    </section>
+
+    <section class="panel" id="estimate-panel">
+      <h2>AI-based Fare Estimator</h2>
+      <form id="estimate-form" class="estimate-form">
+        <div class="form-field">
+          <label for="estimate-route">Route</label>
+          <select id="estimate-route"></select>
+        </div>
+        <div class="form-field">
+          <label for="seat-count">Number of Seats</label>
+          <input id="seat-count" type="number" min="1" value="1" required />
+        </div>
+        <button type="submit" class="secondary-button">Estimate Fare</button>
+      </form>
+      <div id="estimate-result" class="estimate-result">Enter route and seat count to estimate fare.</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with Node.js and plain JavaScript for a fast booking experience.</p>
+  </footer>
+  <script src="app-v3.js?v=1"></script>
+</body>
+</html>
